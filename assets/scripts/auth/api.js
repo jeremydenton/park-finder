@@ -13,7 +13,7 @@ const signUp = formData => {
 }
 
 const signIn = formData => {
-  console.log('from api signIn')
+  console.log('from api signIn' + formData)
 
   return $.ajax({
     url: config.apiUrl + '/sign-in',

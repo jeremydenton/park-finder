@@ -1,0 +1,23 @@
+{{#each parks as |park|}}
+  {{log park}}
+  <section data-id="{{park.id}}">
+    <h6>Name:</h6>
+    <h3>
+      {{limit park.name 15}}
+    </h2>
+    <h6>address:</h6>
+    <p>
+      {{#if park.address}}
+        {{park.address}}
+      {{else}}
+        No user provided.
+      {{/if}}
+    </p>
+    <h6>bathroom:</h6>
+    <p>
+      {{park.bathroom}}
+    </p>
+    <button data-id="{{park.id}}" class="btn btn-danger remove-park">Remove park</button>
+  </section>
+
+{{/each}}
