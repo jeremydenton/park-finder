@@ -8,7 +8,7 @@ const onSignUp = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log('sign up')
+  // console.log('sign up')
   api.signUp(formData)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)

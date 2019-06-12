@@ -1,23 +1,35 @@
 {{#each parks as |park|}}
-  {{log park}}
+
   <section data-id="{{park.id}}">
-    <h6>Name:</h6>
+    <h6></h6>
     <h3>
-      {{limit park.name 15}}
+      Name: {{limit park.name 15}}
     </h2>
-    <h6>address:</h6>
+    <h6></h6>
     <p>
+      Address:
       {{#if park.address}}
         {{park.address}}
       {{else}}
-        No user provided.
+        No address provided.
       {{/if}}
     </p>
-    <h6>bathroom:</h6>
+    <h6></h6>
     <p>
-      {{park.bathroom}}
+      Bathroom: {{park.bathroom}}
     </p>
-    <button data-id="{{park.id}}" class="btn btn-danger remove-park">Remove park</button>
+    <p> ID: {{park.id}}
+      {{#if park.editable}}
+
+    <button data-id="{{park.id}}" class="btn btn-danger delete-park">Remove park</button>
+    <h2>Edit Park</h2>
+    <form data-id="{{park.id}}" class="editPark">
+      <input type="text" name="park[name]" placeholder="Name"/>
+      <input type="text" name="park[address]" placeholder="Address"/>
+      <input type="text" name="park[bathroom]" placeholder="Bathroom? (true or false)"/>
+      <input  class="edit-park-submitter" type="submit" value="Change Park"/>
+    </form>
+    {{/if}}
   </section>
 
 {{/each}}
