@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui')
+const parkUi = require('../park/ui.js')
 
 const onSignUp = event => {
   event.preventDefault()
@@ -38,7 +39,7 @@ const onChangePassword = event => {
 
 const onSignOut = event => {
   event.preventDefault()
-
+  parkUi.clearParks()
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
