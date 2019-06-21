@@ -1,0 +1,31 @@
+{{#each tortoises as |tortoise|}}
+
+  <section data-id="{{tortoise.id}}">
+    <h6></h6>
+    <h3>
+      Color: {{limit tortoise.color 15}}
+    </h2>
+    <h6></h6>
+    <p>
+      Age:
+      {{#if tortoise.age}}
+        {{tortoise.age}}
+      {{else}}
+        No age provided.
+      {{/if}}
+    </p>
+    <h6></h6>
+    <p> ID: {{tortoise.id}}
+      {{#if tortoise.editable}}
+
+    <button data-id="{{tortoise.id}}" class="btn btn-danger delete-tortoise">Remove tortoise</button>
+    <h2>Edit Tortoise</h2>
+    <form data-id="{{tortoise.id}}" class="editTortoise">
+      <input type="text" name="tortoise[color]" placeholder="Color"/>
+      <input type="text" name="tortoise[age]" placeholder="Age"/>
+      <input  class="edit-tortoise-submitter" type="submit" value="Change Tortoise"/>
+    </form>
+    {{/if}}
+  </section>
+
+{{/each}}

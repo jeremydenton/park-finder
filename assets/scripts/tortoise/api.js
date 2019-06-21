@@ -2,11 +2,11 @@
 const config = require('../config')
 const store = require('../store')
 
-const getParks = () => {
-  console.log('from api getParks')
+const getTortoises = () => {
+  console.log('from api getTortoises')
   console.log(store.user.token)
   return $.ajax({
-    url: config.apiUrl + '/parks',
+    url: config.apiUrl + '/tortoises',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -14,12 +14,12 @@ const getParks = () => {
   })
 }
 
-const createPark = formData => {
-  console.log('from api getParks')
+const createTortoise = formData => {
+  console.log('from api getTortoises')
   console.log(store.user.token)
   console.log(formData)
   return $.ajax({
-    url: config.apiUrl + '/parks',
+    url: config.apiUrl + '/tortoises',
     method: 'POST',
     data: formData,
     headers: {
@@ -28,12 +28,12 @@ const createPark = formData => {
   })
 }
 
-const editPark = (formData, id) => {
-  console.log('from api getParks')
+const editTortoise = (formData, id) => {
+  console.log('from api getTortoises')
   console.log(store.user.token)
   console.log(formData)
   return $.ajax({
-    url: config.apiUrl + `/parks/${id}`,
+    url: config.apiUrl + `/tortoises/${id}`,
     method: 'PATCH',
     data: formData,
     headers: {
@@ -42,11 +42,11 @@ const editPark = (formData, id) => {
   })
 }
 
-const deletePark = (id) => {
-  console.log('from api getParks')
+const deleteTortoise = (id) => {
+  console.log('from api getTortoises')
   console.log(store.user.token)
   return $.ajax({
-    url: config.apiUrl + '/parks/' + id,
+    url: config.apiUrl + '/tortoises/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -55,8 +55,8 @@ const deletePark = (id) => {
 }
 
 module.exports = {
-  getParks,
-  createPark,
-  editPark,
-  deletePark
+  getTortoises,
+  createTortoise,
+  editTortoise,
+  deleteTortoise
 }

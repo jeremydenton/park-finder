@@ -5,13 +5,13 @@ const ui = require('./ui.js')
 
 const onGetParks = (event) => {
   event.preventDefault()
-  // console.log('index')
+  console.log('index')
   api.getParks()
     .then(ui.onGetParksSuccess)
     .catch(ui.onGetParksFailure)
 }
 const onCreatePark = (event) => {
-  // console.log('createpark events')
+  console.log('createpark events')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -21,7 +21,7 @@ const onCreatePark = (event) => {
     .catch(ui.onCreateParkFailure)
 }
 const onEditPark = (event) => {
-  // console.log('createpark events')
+  console.log('createpark events')
   event.preventDefault()
   const form = event.target
   const id = $(event.target).data('id')
@@ -32,7 +32,7 @@ const onEditPark = (event) => {
     .catch(ui.onEditParkFailure)
 }
 const onDeletePark = (event) => {
-  // console.log('park deleter')
+  console.log('park deleter')
   const id = $(event.target).data('id')
   api.deletePark(id)
     .then(res => { onGetParks(event) })

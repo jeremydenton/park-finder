@@ -7,6 +7,7 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const parkEvents = require('./park/events')
+const tortoiseEvents = require('./tortoise/events')
 
 $(() => {
   $('#signUp').on('submit', authEvents.onSignUp)
@@ -17,5 +18,6 @@ $(() => {
   // $('#createPark').on('submit', parkEvents.onCreatePark)
   // $('#editPark').on('submit', parkEvents.onEditPark)
   parkEvents.addHandlers()
-  // console.log('handlers added')
+  tortoiseEvents.addHandlers()
+  console.log('handlers added')
 })
