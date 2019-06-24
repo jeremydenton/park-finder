@@ -3,8 +3,8 @@ const config = require('../config')
 const store = require('../store')
 
 const getParks = () => {
-  console.log('from api getParks')
-  console.log(store.user.token)
+  // console.log('from api getParks')
+  // console.log(store.user.token)
   return $.ajax({
     url: config.apiUrl + '/parks',
     method: 'GET',
@@ -15,9 +15,9 @@ const getParks = () => {
 }
 
 const createPark = formData => {
-  console.log('from api getParks')
-  console.log(store.user.token)
-  console.log(formData)
+  // console.log('from api getParks')
+  // console.log(store.user.token)
+  // console.log(formData)
   return $.ajax({
     url: config.apiUrl + '/parks',
     method: 'POST',
@@ -29,9 +29,9 @@ const createPark = formData => {
 }
 
 const editPark = (formData, id) => {
-  console.log('from api getParks')
-  console.log(store.user.token)
-  console.log(formData)
+  // console.log('from api getParks')
+  // console.log(store.user.token)
+  // console.log(formData)
   return $.ajax({
     url: config.apiUrl + `/parks/${id}`,
     method: 'PATCH',
@@ -43,8 +43,8 @@ const editPark = (formData, id) => {
 }
 
 const deletePark = (id) => {
-  console.log('from api getParks')
-  console.log(store.user.token)
+  // console.log('from api getParks')
+  // console.log(store.user.token)
   return $.ajax({
     url: config.apiUrl + '/parks/' + id,
     method: 'DELETE',

@@ -19,5 +19,5 @@ $(() => {
   // $('#editPark').on('submit', parkEvents.onEditPark)
   parkEvents.addHandlers()
   tortoiseEvents.addHandlers()
-  console.log('handlers added')
+  // console.log('handlers added')
 })

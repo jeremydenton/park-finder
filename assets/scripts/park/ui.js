@@ -2,7 +2,7 @@
 const showParksTemplate = require('../templates/park-listing.handlebars')
 
 const onCreateParkSuccess = responseData => {
-  console.log('success', responseData)
+  // console.log('success', responseData)
   // $('#message').text(responseData)
   $('#createPark').children('input:not(.submit)').val('')
 }
@@ -12,13 +12,13 @@ const clearParks = () => {
 }
 
 const onGetParksSuccess = (data) => {
-  console.log('success', data)
+  // console.log('success', data)
   const showParksHtml = showParksTemplate({ parks: data.parks })
   $('.content').html(showParksHtml)
 }
 
 const onEditParkSuccess = responseData => {
-  console.log('success', responseData)
+  // console.log('success', responseData)
   // $('#message').text(responseData)
   $('#editParkIn').children('input:not(.submit)').val('')
 }

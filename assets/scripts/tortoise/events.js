@@ -5,13 +5,13 @@ const ui = require('./ui.js')
 
 const onGetTortoises = (event) => {
   event.preventDefault()
-  console.log('index')
+  // console.log('index')
   api.getTortoises()
     .then(ui.onGetTortoisesSuccess)
     .catch(ui.onGetTortoisesFailure)
 }
 const onCreateTortoise = (event) => {
-  console.log('createtortoise events')
+  // console.log('createtortoise events')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -21,7 +21,7 @@ const onCreateTortoise = (event) => {
     .catch(ui.onCreateTortoiseFailure)
 }
 const onEditTortoise = (event) => {
-  console.log('createtortoise events')
+  // console.log('createtortoise events')
   event.preventDefault()
   const form = event.target
   const id = $(event.target).data('id')
@@ -32,7 +32,7 @@ const onEditTortoise = (event) => {
     .catch(ui.onEditTortoiseFailure)
 }
 const onDeleteTortoise = (event) => {
-  console.log('tortoise deleter')
+  // console.log('tortoise deleter')
   const id = $(event.target).data('id')
   api.deleteTortoise(id)
     .then(res => { onGetTortoises(event) })

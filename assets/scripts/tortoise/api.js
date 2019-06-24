@@ -3,8 +3,8 @@ const config = require('../config')
 const store = require('../store')
 
 const getTortoises = () => {
-  console.log('from api getTortoises')
-  console.log(store.user.token)
+  // console.log('from api getTortoises')
+  // console.log(store.user.token)
   return $.ajax({
     url: config.apiUrl + '/tortoises',
     method: 'GET',
@@ -15,9 +15,9 @@ const getTortoises = () => {
 }
 
 const createTortoise = formData => {
-  console.log('from api getTortoises')
-  console.log(store.user.token)
-  console.log(formData)
+  // console.log('from api getTortoises')
+  // console.log(store.user.token)
+  // console.log(formData)
   return $.ajax({
     url: config.apiUrl + '/tortoises',
     method: 'POST',
@@ -29,9 +29,9 @@ const createTortoise = formData => {
 }
 
 const editTortoise = (formData, id) => {
-  console.log('from api getTortoises')
-  console.log(store.user.token)
-  console.log(formData)
+  // console.log('from api getTortoises')
+  // console.log(store.user.token)
+  // console.log(formData)
   return $.ajax({
     url: config.apiUrl + `/tortoises/${id}`,
     method: 'PATCH',
@@ -43,8 +43,8 @@ const editTortoise = (formData, id) => {
 }
 
 const deleteTortoise = (id) => {
-  console.log('from api getTortoises')
-  console.log(store.user.token)
+  // console.log('from api getTortoises')
+  // console.log(store.user.token)
   return $.ajax({
     url: config.apiUrl + '/tortoises/' + id,
     method: 'DELETE',
